@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Antiquette">
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
         <activity android:name=".Inscription" />
         <activity android:name=".UserActivity" />
         <activity android:name=".StoreMap" />

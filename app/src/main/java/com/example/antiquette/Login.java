@@ -2,7 +2,9 @@ package com.example.antiquette;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -53,6 +55,7 @@ public class Login extends AppCompatActivity {
                     public void onResponse(Response<User> response, Retrofit retrofit) {
                         if(response.body()!=null)
                         {
+
                             Intent intent2=new Intent(getApplicationContext(), Home.class);
                             startActivity(intent2);}
                         else
