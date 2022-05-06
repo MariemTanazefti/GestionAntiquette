@@ -26,9 +26,9 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        edtEmail=(EditText)findViewById(R.id.email_signin);
-        edtPassword=(EditText)findViewById(R.id.password_signin);
-        txtCreateAccount=(TextView)findViewById(R.id.btn_register);
+        edtEmail=(EditText)findViewById(R.id.edt_email_signIn);
+        edtPassword=(EditText)findViewById(R.id.edt_pass_signIn);
+        txtCreateAccount=(TextView)findViewById(R.id.btn_register_signIn);
         txtCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +36,7 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnVald=(TextView)findViewById(R.id.btSignIn);
+        btnVald=(TextView)findViewById(R.id.btn_signIn_login);
         apiHandler= ApiClient.getApiClient().create(ApiHandler.class);
         btnVald.setOnClickListener(new View.OnClickListener() {
             @Override

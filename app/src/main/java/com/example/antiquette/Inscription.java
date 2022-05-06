@@ -24,11 +24,11 @@ public class Inscription extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
-        edtName=(EditText)findViewById(R.id.nameinput);
-        edtEmail=(EditText)findViewById(R.id.emailinput);
-        edtPass=(EditText)findViewById(R.id.passwordinput);
-        edtCPass=(EditText)findViewById(R.id.Cpasswordinput);
-        txtAccount=(TextView) findViewById(R.id.signIn);
+        edtName=(EditText)findViewById(R.id.edt_name_inscription);
+        edtEmail=(EditText)findViewById(R.id.edt_email_inscription);
+        edtPass=(EditText)findViewById(R.id.edt_pass_inscription);
+        edtCPass=(EditText)findViewById(R.id.edt_confirm_pass_inscription);
+        txtAccount=(TextView) findViewById(R.id.btn_signIn_inscription);
         txtAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +37,7 @@ public class Inscription extends AppCompatActivity {
 
             }
         });
-        btnSinup=(TextView)findViewById(R.id.btSignUp);
+        btnSinup=(TextView)findViewById(R.id.btn_signUp);
         apiHandler= ApiClient.getApiClient().create(ApiHandler.class);
 
         btnSinup.setOnClickListener(new View.OnClickListener() {

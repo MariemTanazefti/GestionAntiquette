@@ -1,5 +1,7 @@
 package com.example.antiquette;
 
+import com.google.gson.annotations.SerializedName;
+
 public class User {
     private int id;
     private String email;
@@ -7,15 +9,23 @@ public class User {
     private String name;
     private String confirmPassword;
 
+    public String getSuccess() {
+        return success;
+    }
+
+    @SerializedName("success")
+    private String success;
 
 
-    public User(int id, String email, String password, String name, String confirmPassword) {
+    public User(int id, String email, String password, String name, String confirmPassword, String success) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.name = name;
         this.confirmPassword = confirmPassword;
+        this.success = success;
     }
+
 
     public String getName() {
         return name;

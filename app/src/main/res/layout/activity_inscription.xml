@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/title"
-            android:text="Register"
+            android:text="Inscription"
             android:textSize="50dp"
             android:layout_gravity="center"
             android:textColor="@color/blanc"
@@ -29,10 +29,10 @@
             />
 
         <EditText
-            android:id="@+id/nameinput"
+            android:id="@+id/edt_name_inscription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
+            android:hint="Nom"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -41,69 +41,69 @@
             />
 
         <EditText
-            android:id="@+id/emailinput"
+            android:id="@+id/edt_email_inscription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/nameinput"
-            android:hint="Email"
+            android:layout_below="@id/edt_name_inscription"
+            android:hint="Adresse email"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:inputType="textEmailAddress"
-            app:layout_constraintTop_toBottomOf="@id/nameinput"
+            app:layout_constraintTop_toBottomOf="@id/edt_name_inscription"
             android:textSize="20dp" />
         <EditText
-            android:id="@+id/passwordinput"
+            android:id="@+id/edt_pass_inscription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/emailinput"
+            android:layout_below="@id/edt_email_inscription"
             android:layout_marginTop="50dp"
-            android:hint="Password"
+            android:hint="Mot de passe"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:inputType="textPassword"
-            app:layout_constraintTop_toBottomOf="@id/emailinput"
+            app:layout_constraintTop_toBottomOf="@id/edt_email_inscription"
             android:textSize="20dp" />
         <EditText
-            android:id="@+id/Cpasswordinput"
+            android:id="@+id/edt_confirm_pass_inscription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirm your password "
+            android:hint="Confirme mot de passe"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:inputType="textPassword"
-            app:layout_constraintTop_toBottomOf="@id/passwordinput"
+            app:layout_constraintTop_toBottomOf="@id/edt_pass_inscription"
             android:textSize="20dp" />
 
 
 
 
         <TextView
-            android:id="@+id/btSignUp"
+            android:id="@+id/btn_signUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:textAlignment="center"
             android:textSize="20dp"
             android:background="@drawable/bouton"
-            android:text="Sign up"
+            android:text="Inscription"
             android:layout_marginTop="50dp"
-            app:layout_constraintTop_toBottomOf="@id/Cpasswordinput"
+            app:layout_constraintTop_toBottomOf="@id/edt_confirm_pass_inscription"
             android:textColor="@color/black"
 
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/signIn"
-            android:text="Sign Up if you have an account "
+            android:id="@+id/btn_signIn_inscription"
+            android:text="Connecter, si vous avez un compte "
             android:textSize="20dp"
             android:layout_marginTop="30dp"
             android:textColor="@color/white"
             android:layout_gravity="center"
             android:background="@color/blanc"
-            app:layout_constraintTop_toBottomOf="@id/btSignUp"
+            app:layout_constraintTop_toBottomOf="@id/btn_signUp"
             app:layout_constraintLeft_toLeftOf="parent"
             android:textStyle="bold"/>
 

@@ -56,7 +56,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="-92dp"
                 android:background="@color/blanc"
-                android:text="ADD to Cart"
+                android:text="Ajouter au panier"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
