@@ -1,63 +1,57 @@
 package com.example.antiquette;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class Home extends AppCompatActivity {
-    TextView btnStore ,btnVente,btnCamera,btnDeconnexion;
-    TextView tv;
+    BottomNavigationView bottomNavigationView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        btnStore=(TextView) findViewById(R.id.btn_store);
-        btnVente=(TextView) findViewById(R.id.btn_article);
-        btnCamera=(TextView)findViewById(R.id.btn_camera);
-        btnDeconnexion=(TextView)findViewById(R.id.btn_deconnexion);
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
-            tv.setText(bundle.getString("user"));}
+        bottomNavigationView=(BottomNavigationView) findViewById(R.id.botton_navigation);
 
-        btnVente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(Home.this, UserActivity.class);
-                //intent.putExtras(mBundle);
-                startActivity(intent);
-                Toast.makeText(Home.this, "Bienvenue " , Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        btnStore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Home.this,StoreMap.class);
-                //intent.putExtras(mBundle);
-                startActivity(intent);
-                Toast.makeText(Home.this, "Bienvenue " , Toast.LENGTH_SHORT).show();
-            }
-        });
-        btnCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivity(intent);
-            }
-        });
-        btnDeconnexion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Home.this,Login.class);
-                startActivity(intent);
-            }
-        });
-
+        bottomNavigationView.setOnNavigationItemSelectedListener(naviglistener);
     }
+
+
+    public BottomNavigationView.OnNavigationItemSelectedListener naviglistener=new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment unFrgment=null;
+            switch (item.getItemId()){
+                case R.id.item_store:
+                    unFrgment=new StoreFragment();
+                    break;
+                case R.id.item_camera:
+                    unFrgment=new CameraFragment();
+                    break;
+                case R.id.item_location:
+                    unFrgment=new LocationFragment();
+
+
+            }
+            String URL="http://192.168.8.103:80/";
+            Bundle bundle=new Bundle();
+            bundle.putString("url",URL);
+            unFrgment.setArguments(bundle);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_place_holder,unFrgment).commit();
+            return true;
+
+
+        }
+    };
 }

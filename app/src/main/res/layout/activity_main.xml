@@ -17,6 +17,23 @@
 
         android:src="@drawable/log"
        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pourcentage"
+        android:id="@+id/txt_pourcentage"
+       android:layout_below="@id/logo_id"
+        android:layout_centerHorizontal="true"
+        />
+    <ProgressBar
+        android:id="@+id/progresbar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+      android:layout_above="@id/txt_pourcentage"
+        android:layout_marginBottom="20dp"/>
+
+
 
 
 </RelativeLayout>

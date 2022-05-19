@@ -9,15 +9,21 @@
     android:background="@drawable/grid">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Détails d'article"
+        android:textColor="@color/darkviolet"
+        android:textSize="50dp" />
 
-
-
-            <ImageView
+    <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="27dp"
+                android:layout_marginTop="100dp"
                 android:src="@drawable/tel" />
 
             <TextView
@@ -28,6 +34,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="50dp"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:text="vintage phone"
                 android:textSize="20dp"
                 android:textStyle="normal|bold" />
@@ -40,10 +47,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/grid_name"
                 android:layout_centerHorizontal="true"
-                android:layout_marginLeft="150dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:text="1500 DT"
                 android:textSize="15dp"
                 android:textStyle="normal|bold" />
@@ -52,10 +59,12 @@
                 android:id="@+id/ADDdetail"
                 android:layout_width="150dp"
                 android:layout_height="50dp"
-                android:layout_alignBottom="@id/grid_price"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="-92dp"
-                android:background="@color/blanc"
+                android:layout_below="@id/grid_price"
+                android:layout_marginBottom="100dp"
+                android:layout_marginTop="50dp"
+                android:background="@color/darkviolet"
+                android:textColor="@color/black"
                 android:text="Ajouter au panier"
                 android:textAlignment="center"
                 android:textSize="20sp" />

@@ -40,7 +40,9 @@ public class GridItemActivity extends AppCompatActivity {
                 insertProduct.enqueue(new Callback<Produit>() {
                     @Override
                     public void onResponse(Response<Produit> response, Retrofit retrofit) {
-                        Toast.makeText(getApplicationContext(),"product added",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Article ajouté",Toast.LENGTH_LONG).show();
+                        Intent intent= new Intent(GridItemActivity.this, StoreFragment.class);
+                        startActivity(intent);
 
 
                     }
@@ -65,8 +67,9 @@ public class GridItemActivity extends AppCompatActivity {
 
         gridName.setText(receivedName);
         imageView.setImageResource(receivedImage);
-        //gridDescription.setText(receivedDescription);
         gridPrice.setText(receivedPrice);
+        //gridDescription.setText(receivedDescription);
+       // gridPrice.setText(receivedPrice);
         //enable back Button
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
