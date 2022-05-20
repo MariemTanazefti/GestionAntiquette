@@ -1,9 +1,12 @@
 package com.example.antiquette;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -25,50 +28,34 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * create an instance of this fragment.
  */
 public class LocationFragment extends Fragment implements OnMapReadyCallback {
+
     private GoogleMap mMap;
-    MapView mapView;
-    View V;
-
-    public LocationFragment() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        V=inflater.inflate(R.layout.fragment_location, container, false);
-        return V;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        mapView=V.findViewById(R.id.map);
-        if(mapView !=null){
-            mapView.onCreate(null);
-            mapView.onResume();
-            mapView.getMapAsync(this);
-        }
-
-
+        return inflater.inflate(R.layout.fragment_location,container,false);
 
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        MapsInitializer.initialize(getContext());
         mMap=googleMap;
-        mMap.setMapType(googleMap.MAP_TYPE_HYBRID);
-        LatLng Tunis= new LatLng(37.274612,9.862724);
-        mMap.addMarker(new MarkerOptions().position(Tunis).title("Notre store ici"));
+        mMap.setMapType(googleMap.MAP_TYPE_SATELLITE);
+        LatLng Tunis= new LatLng(33.843908,9.400138);
+        LatLng benArous= new LatLng(36.6306483,10.2100827);
+        mMap.addMarker(new MarkerOptions().position(benArous).title("Marker in Ben Arous"));
+        mMap.addMarker(new MarkerOptions().position(Tunis).title("Marker in Tunis"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Tunis));
+        if(ActivityCompat.checkSelfPermission( getContext(),Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(),Manifest.permission.ACCESS_COARSE_LOCATION)!=PackageManager.PERMISSION_GRANTED){
+            return;
+        }
+        mMap.setMyLocationEnabled(true);
         mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setRotateGesturesEnabled(true);
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
         mMap.getUiSettings().setAllGesturesEnabled(true);
-        mMap.getUiSettings().setRotateGesturesEnabled(true);
-
-    }
+        mMap.getUiSettings().setRotateGesturesEnabled(true); }
 }
 
