@@ -82,7 +82,7 @@ public class StoreFragment extends Fragment {
                 //Toast.makeText(getApplicationContext(), MeublesNames[i], Toast.LENGTH_LONG).show();
                 Toast.makeText(getContext(),MeublesNames[i],Toast.LENGTH_LONG).show();
                 //Intent intent = new Intent(getApplicationContext(), GridItemActivity.class);
-                Intent intent = new Intent(getContext(),GridItemActivity.class);
+                Intent intent = new Intent(getContext(), DetailsActivity.class);
                 intent.putExtra("name", MeublesNames[i]);
                 intent.putExtra("image", MeublesImages[i]);
                 //intent.putExtra("price",MeublesPrices[i]);

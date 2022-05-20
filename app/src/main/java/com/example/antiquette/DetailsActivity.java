@@ -15,14 +15,14 @@ import retrofit.Callback;
 import retrofit.Response;
 import retrofit.Retrofit;
 
-public class GridItemActivity extends AppCompatActivity {
+public class DetailsActivity extends AppCompatActivity {
     TextView gridName,gridDescription,gridPrice,btnCart;
     ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grid_item);
+        setContentView(R.layout.activity_details);
         btnCart=findViewById(R.id.ADDdetail);
         gridName = findViewById(R.id.grid_name);
         imageView = findViewById(R.id.imageView);
@@ -41,7 +41,7 @@ public class GridItemActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Response<Produit> response, Retrofit retrofit) {
                         Toast.makeText(getApplicationContext(),"Article ajouté",Toast.LENGTH_LONG).show();
-                        Intent intent= new Intent(GridItemActivity.this, StoreFragment.class);
+                        Intent intent= new Intent(DetailsActivity.this, StoreFragment.class);
                         startActivity(intent);
 
 

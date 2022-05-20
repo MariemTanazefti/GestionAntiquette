@@ -2,12 +2,9 @@ package com.example.antiquette;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,13 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-
-import retrofit.Call;
-import retrofit.Callback;
-import retrofit.Response;
-import retrofit.Retrofit;
 
 public class ProduitAdapter extends RecyclerView.Adapter<ProduitAdapter.ProductViewHolder> {
 
@@ -58,7 +49,7 @@ public class ProduitAdapter extends RecyclerView.Adapter<ProduitAdapter.ProductV
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(context,GridItemActivity.class);
+                Intent intent=new Intent(context, DetailsActivity.class);
                 int idProduct=product.getId();
                 String id=String.valueOf(idProduct);
 

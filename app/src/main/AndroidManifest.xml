@@ -20,7 +20,7 @@
         <activity android:name=".Login" />
         <activity android:name=".Inscription" />
         <activity android:name=".Home" />
-        <activity android:name=".GridItemActivity" />
+        <activity android:name=".DetailsActivity" />
         <activity android:name=".MainActivity">
             <meta-data
                 android:name="com.google.android.geo.API_KEY"
